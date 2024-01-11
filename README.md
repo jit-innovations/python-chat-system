@@ -20,7 +20,7 @@ This application is compatible with python version 3 and above
 ## Functioning and Gui
 **Below is the GUI of server side application**
 
-<img src = "Server_GUI.png" alt = Server style = "width:800px;"/>
+![Server_GUI](https://github.com/jit-innovations/python-chat-system/assets/155825181/03228468-e730-448c-ab75-b14adb8b72e3)
 
 1. Firstly, the server admin needs to enter the IP address to which server will bind and run on that IP and port number is by default 9000
 1. Hit **Run Server** button to run the server
@@ -30,8 +30,7 @@ This application is compatible with python version 3 and above
 
 **Below is the GUI of the client side application**
 
-<!-- ![GUI](C:\Users\abc\Desktop\Chat_App\Client_GUI.png) -->
-<img src = "Client_GUI.png" alt = Client style = "width:800px;"/>
+![Client_GUI](https://github.com/jit-innovations/python-chat-system/assets/155825181/83a85191-bc59-4540-9448-97101e3d1112)
 
 1. The client first need to enter the IP address of the server and enter their username which must unique among all the currently connected clients otherwise a warning pop up is displayed saying **Username Exists**
 1. The **Online clients** workspace is the place where name of the currently online clients to server are displayed, and client can select the particular client useing **select** button with whome they want to chat
@@ -39,6 +38,12 @@ This application is compatible with python version 3 and above
 1. **Send** button sends the message privately to the user with whom the client is chatting
 1. **Broadcast** workspace allows to display the broadcasted messages
 1. **Broadcast** button sends messages to all the clients currently online
+
+
+### To Run the application
+1. First, run **Server.py** and run server
+2. Then, run multiple **App.py** with different usernames and connect to the server
+3. Now, start messaging or communicating to the selected client
 
 ## Working  
 Basically, each of the client gets connected to the server with their **socket**, each clients socket is associated with their unique **username** and stored at run time to identify whose message is to be redirected to which user/client. Each message from the client is a string where in the starting of the actual message **receiver's username** and **sender's username** is added and decoded at the server. This collection of a string having **receiver + sender + message** is then divided in two parts **receiver & server + message** to identify the reciever where this remaining message is to be redirected. If the receiver is online the message is redirected to the respective client otherwise nothing happens. If a client broadcasts a message, the server redirects the message to all the clients online.
